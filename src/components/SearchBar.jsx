@@ -32,8 +32,8 @@ function SearchBar() {
     axios.get(url).then(getData);
   }
   // Function to handle input change
-  const handleInputChange = (e) => {
-    setSearchTerm(e.target.value);
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
   // Function to prevent default form submission and call getData
