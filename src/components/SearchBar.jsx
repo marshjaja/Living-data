@@ -83,7 +83,7 @@ function SearchBar() {
       {propertyData && (
         <div>
           {/* Display property data from the second API endpoint */}
-          {/* Adjust the rendering based on the structure of your property data */}
+          {/* Adjust the rendering based on the structure of your property data- will add bootstrap cards for specific info needed*/}
           <pre>{JSON.stringify(propertyData, null, 2)}</pre>
         </div>
       )}
