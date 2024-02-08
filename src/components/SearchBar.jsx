@@ -19,6 +19,7 @@ function SearchBar() {
         },
       };
 
+
       try {
         const autoCompleteResponse = await fetch(autoCompleteUrl, autoCompleteOptions);
         const autoCompleteResult = await autoCompleteResponse.json();
