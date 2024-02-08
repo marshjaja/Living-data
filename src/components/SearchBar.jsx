@@ -1,11 +1,15 @@
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 function SearchBar() {
 
+//to store the search?
+const [searchTerm, setSearchTerm] = useState('');
+
 
     async function getData() {
-        const url = 'https://uk-real-estate-rightmove.p.rapidapi.com/rent/property-to-rent?identifier=REGION%5E1036&search_radius=0.0';
+        const url = `https://uk-real-estate-rightmove.p.rapidapi.com/rent/property-to-rent?identifier=REGION%5E1036&search_radius=0.0&term=${searchTerm}`;
         const options = {
             method: 'GET',
             headers: {
@@ -19,28 +23,44 @@ function SearchBar() {
             const result = await response.json();
             console.log(result);
 
-            // render your result.data array!
+            // render result.data array! on change event for user search
             
         } catch (error) {
             console.error(error);
         }
     }
+// Function to handle input change
+const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
+  // Function to prevent default form submission and call getData
+  const handleSearch = (e) => {
+    e.preventDefault();
+    getData();
+  };
 
     return (
-        <>
-            <div className='d-flex flex-col'>
-                <Form.Control size="lg" type="text" placeholder="Search by Region name" />
-                <Button variant="secondary" onClick={getData}>Search</Button>
-            </div>
-            <br />
-            <img src="https://www.zoopla.co.uk/static/images/mashery/powered-by-zoopla-150x73.png" width="150" height="73" title="Property information powered by Zoopla" alt="Property information powered by Zoopla" border="0"></img>
-        </>
-    );
+    <>
+      <div className='d-flex flex-col'>
+        <Form onSubmit={handleSearch}>
+          <Form.Control
+            size='lg'
+            type='text'
+            placeholder='Search by Region name'
+            value={searchTerm}
+            onChange={handleInputChange}
+          />
+          <Button type='submit' variant='secondary'>
+            Search
+          </Button>
+        </Form>
+      </div>
+      <br />
+    </>
+  );
 }
 
 export default SearchBar;
 
 
-//const apiResponse = [
-// { id: 1, address:
