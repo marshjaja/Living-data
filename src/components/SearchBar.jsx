@@ -67,7 +67,7 @@ function SearchBar() {
     }
 
     // function helps us remember what the user types 
-    const handleInputChange = (event) => {
+    const inputChange = (event) => {
         // save what the user types 
         setLocation(event.target.value);
     }
@@ -80,7 +80,7 @@ function SearchBar() {
                 type="text" 
                 placeholder="Search by Region name" 
                 value={location} // shows what the user has typed 
-                onChange={handleInputChange} //  helps  remember what  user types
+                onChange={inputChange} //  helps  remember what  user types
             />
             {/*  start searching for location  */}
             <Button variant="secondary" onClick={getData}>Search</Button>
