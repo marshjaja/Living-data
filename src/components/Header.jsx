@@ -1,6 +1,14 @@
-function Header(){
+
+import headerImg from '../assets/images/header_img.jpg';
+
+const Header = () => {
     return (
-        <div>This is header</div>
+        <>
+            <header className='center'>
+                <img src={headerImg} alt='header photo'></img>
+            </header>
+        </>
     )
 }
+
 export default Header
