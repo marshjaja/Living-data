@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 function SearchBar() {
   //to store the search? #
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResult, setSearchResult] = useState(null);
 
-  async function getData() {
+  function getData() {
     const url = `https://uk-real-estate-rightmove.p.rapidapi.com/rent/property-to-rent?identifier=REGION%5E1036&search_radius=0.0&term=${searchTerm}`;
     const options = {
       method: 'GET',
@@ -28,6 +29,7 @@ function SearchBar() {
     } catch (error) {
       console.error(error);
     }
+    axios.get(url).then(getData);
   }
   // Function to handle input change
   const handleInputChange = (e) => {
