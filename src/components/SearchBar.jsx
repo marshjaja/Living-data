@@ -8,7 +8,7 @@ function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResult, setSearchResult] = useState(null);
 
-  function getData() {
+  async function getData() {
     const url = `https://uk-real-estate-rightmove.p.rapidapi.com/rent/property-to-rent?identifier=REGION%5E1036&search_radius=0.0&term=${searchTerm}`;
     const options = {
       method: 'GET',
