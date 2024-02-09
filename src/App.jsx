@@ -1,37 +1,70 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import SearchBar from './components/SearchBar';
+// import React, { useState } from 'react';
+// import PropertyCard from './components/charts/PropertyCard'; // Importing PropertyCard component
+// import SearchBar from './components/SearchBar'; // Importing SearchBar component
+
+// function App() {
+//     // State variable to hold property data
+//     const [propertyData, setPropertyData] = useState([]);
+
+//     // Define a function to update property data
+//     const updatePropertyData = (newData) => {
+//         setPropertyData(newData); // Set property data to the new data received
+//     };
+
+//     return (
+//         <div>
+//             <h1>Property Listings</h1>
+//             {/* Render the SearchBar component and pass updatePropertyData as a prop */}
+//             <SearchBar updatePropertyData={updatePropertyData} />
+//             {/* Render property data */}
+//             {propertyData.map(property => (
+//                 <div key={property.id}>
+//                     <p>Price: {property.price.amount} GBP</p> {/* Display property price */}
+//                     <p>Address: {property.displayAddress}</p> {/* Display property address */}
+//                     {/* Check if propertyImages exist before mapping */}
+//                     {property.propertyImages && property.propertyImages.map((image, index) => (
+//                         <img key={index} src={image.srcUrl} alt={`Property Image ${index + 1}`} /> // Display property images
+//                     ))}
+//                 </div>
+//             ))}
+//         </div>
+//     );
+// }
+
+// export default App;
+
+//-----------------
+import React, { useState } from 'react';
+import PropertyCard from './components/charts/PropertyCard'; // Importing PropertyCard component
+import SearchBar from './components/SearchBar'; // Importing SearchBar component
 
 function App() {
-  const [count, setCount] = useState(0);
+    // State variable to hold property data
+    const [propertyData, setPropertyData] = useState([]);
 
-  return (
-    <>
-      <div>
-        <SearchBar />
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Living Data</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  );
+    // Define a function to update property data
+    const updatePropertyData = (newData) => {
+        setPropertyData(newData); // Set property data to the new data received
+    };
+
+    return (
+        <div>
+            <h1>Property Listings</h1>
+            {/* Render the SearchBar component and pass updatePropertyData as a prop */}
+            <SearchBar updatePropertyData={updatePropertyData} />
+            {/* Render PropertyCard for each property */}
+            {propertyData.map(property => (
+                <PropertyCard
+                    key={property.id}
+                    price={property.price.amount}
+                    imageSrc={property.propertyImages[0].srcUrl}
+                />
+            ))}
+        </div>
+    );
 }
 
 export default App;
+
+
+
