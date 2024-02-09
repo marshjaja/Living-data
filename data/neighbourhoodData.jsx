@@ -7,7 +7,7 @@ export const boroughCoordinates = {
 	Bromley: { latitude: 51.37, longitude: 0.0492 },
 	Camden: { latitude: 51.55, longitude: -0.15662 },
 	Chelsea: { latitude: 51.549, longitude: -0.1084 },
-	Croydon: { latitude: 51.35, longitude: -0.0775 },
+	Croydon: { latitude: 51.38, longitude: -0.1 },
 	Ealing: { latitude: 51.52, longitude: -0.3285 },
 	Ealing: { latitude: 51.52, longitude: -0.3287 },
 	Enfield: { latitude: 51.65, longitude: -0.08 },
