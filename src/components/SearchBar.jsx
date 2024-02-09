@@ -1,94 +1,101 @@
 
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form'; // Importing Form component from react-bootstrap
+import Button from 'react-bootstrap/Button'; // Importing Button component from react-bootstrap
 
-//  function defines our search bar component
 function SearchBar() {
-    //  'useState' that helps us remember what the user types in the search box
-    const [location, setLocation] = useState(''); // start with an empty search
+    // Using useState hook to manage state variables
+    const [searchTerm, setSearchTerm] = useState(''); // State variable for the search term
+    const [propertyData, setPropertyData] = useState(null); // State variable for property data
 
-    //  called when the user clicks the search button
-    async function getData() {
-        //  create url
-        const url = `https://uk-real-estate-rightmove.p.rapidapi.com/auto-complete?location=${location}`;
+    // Function to handle input change in the search field
+    const handleInputChange = (e) => {
+        setSearchTerm(e.target.value); // Updating the search term state with the input value
+    };
 
-        const options = {
-            method: 'GET', 
-            headers: {
-                'X-RapidAPI-Key': 'b89d513c8emshbd8c807ed2a518ap13c15cjsnf49cf221aa01',
-                'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com'
-            }
-        };
+    // Function to handle the search action
+    const handleSearch = async (e) => {
+        e.preventDefault(); // Preventing default form submission 
 
         try {
-            const response = await fetch(url, options);
-            // api sends us back response
-            const result = await response.json();
-            console.log(result);
+            // Setting up the URL 
+            const autoCompleteUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/auto-complete?location=${searchTerm}`;
+            const autoCompleteOptions = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'b3562c4c1dmshc0b7700a9473456p18b30ejsn9e3240b972fe',
+                    'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com',
+                },
+            };
 
-            // extract locationIdentifier
-            const locationIdentifiers = result.data.map(item => item.locationIdentifier);
-            console.log(locationIdentifiers);
+            // Fetching data from the autocomplete API
+            const autoCompleteResponse = await fetch(autoCompleteUrl, autoCompleteOptions);
+            const autoCompleteResult = await autoCompleteResponse.json();
 
-            // pick the first 
-            if (locationIdentifiers.length > 0) {
-                fetchData(locationIdentifiers[0]);
-            }
+            // console.log('AutoComplete Result:', autoCompleteResult);
+
+            // Extracting the region code from the autocomplete result
+            const regionCode = autoCompleteResult?.data[0]?.locationIdentifier;
+
+            // Setting up the URL for second API endpoint property-to-rent
+            const propertyUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/rent/property-to-rent?identifier=${regionCode}&search_radius=0.0`;
+            const propertyOptions = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'b3562c4c1dmshc0b7700a9473456p18b30ejsn9e3240b972fe',
+                    'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com',
+                },
+            };
+
+            // Fetching property data using the property API
+            const propertyResponse = await fetch(propertyUrl, propertyOptions);
+            const propertyResult = await propertyResponse.json();
+
+            // console.log('Property Result:', propertyResult);
+
+            // Updating the property data state with the fetched data
+            setPropertyData(propertyResult);
         } catch (error) {
-            // if something goes wrong, we show an error message
+            // Handling errors
             console.error(error);
         }
-    }
-
-    // use the locationIdentifier to get data from property-to-rent api end point
-    async function fetchData(locationIdentifier) {
-        // create url using locationIdentifier
-        const url = `https://uk-real-estate-rightmove.p.rapidapi.com/rent/property-to-rent?identifier=${locationIdentifier}&search_radius=0.0`;
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': 'b89d513c8emshbd8c807ed2a518ap13c15cjsnf49cf221aa01',
-                'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com'
-            }
-        };
-
-        try {
-            const response = await fetch(url, options);
-            const result = await response.json();
-            console.log(result);
-
-            // extract price amount
-            const priceAmount = result.data[0].price.amount;
-            console.log(priceAmount);
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
-    // function helps us remember what the user types 
-    const inputChange = (event) => {
-        // save what the user types 
-        setLocation(event.target.value);
-    }
+    };
 
     return (
-        <div className='d-flex flex-col'>
-            {/*  types the name of the location  */}
-            <Form.Control 
-                size="lg" 
-                type="text" 
-                placeholder="Search by Region name" 
-                value={location} // shows what the user has typed 
-                onChange={inputChange} //  helps  remember what  user types
-            />
-            {/*  start searching for location  */}
-            <Button variant="secondary" onClick={getData}>Search</Button>
-        </div>
+        <>
+            <div className='d-flex flex-col'>
+                {/* Form for searching */}
+                <Form onSubmit={handleSearch}>
+                    <Form.Control
+                        size='lg'
+                        type='text'
+                        placeholder='Search by Region name'
+                        value={searchTerm}
+                        onChange={handleInputChange} // Calling handleInputChange function on input change
+                    />
+                    <Button type='submit' variant='secondary'>
+                        Search
+                    </Button>
+                </Form>
+            </div>
+            <br />
+            {/* Display property data if available */}
+            {propertyData && (
+                <div>
+                    {/* Displaying property data from the second API endpoint */}
+                    <h2>Property Details</h2>
+                    {propertyData.data.map(property => (
+                        <div key={property.id}>
+                            {/* Displaying property details */}
+                            <p>Address: {property.displayAddress}</p>
+                            <p>Price: {property.price.amount} GBP</p>
+                            <img src={property.propertyImages.mainImageSrc} alt="Main Image" /> {/* Displaying main property image */}
+                        </div>
+                    ))}
+                </div>
+            )}
+        </>
     );
 }
 
 export default SearchBar;
-
-
-

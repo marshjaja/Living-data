@@ -1,73 +1,38 @@
-
 import React, { useState } from 'react';
-import './App.css';
-import BarChart from './components/charts/BarChart';
-import { UserData } from './components/charts/Data';
-import Crime from './components/Crime'; // Import the Crime component
-import SearchBar from './components/SearchBar';
+import PropertyCard from './components/charts/PropertyCard'; // Importing PropertyCard component
+import SearchBar from './components/SearchBar'; // Importing SearchBar component
 
 function App() {
-  const [userData, setUserData] = useState({
-    labels: UserData.map((data) => data.year),
-    datasets: [{
-      label: "User Gained",
-      data: UserData.map((data) => data.userGain),
-    }]
-  });
+    // State variable to hold property data
+    const [propertyData, setPropertyData] = useState([]);
 
-  return (
-    <div className='App'>
-      <BarChart chartData={userData}/>
-      {/* <Crime /> Render the Crime component */}
-      <SearchBar />
-    </div>
-  );
+    // Define a function to update property data
+    const updatePropertyData = (newData) => {
+        setPropertyData(newData); // Set property data to the new data received
+    };
+
+    return (
+        <div>
+            <h1>Property Listings</h1>
+            {/* Render the SearchBar component and pass updatePropertyData as a prop */}
+            <SearchBar updatePropertyData={updatePropertyData} />
+            {/* Render property data */}
+            {propertyData.map(property => (
+                <div key={property.id}>
+                    <p>Price: {property.price.amount} GBP</p> {/* Display property price */}
+                    <p>Address: {property.displayAddress}</p> {/* Display property address */}
+                    {/* Check if propertyImages exist before mapping */}
+                    {property.propertyImages && property.propertyImages.map((image, index) => (
+                        <img key={index} src={image.srcUrl} alt={`Property Image ${index + 1}`} /> // Display property images
+                    ))}
+                </div>
+            ))}
+        </div>
+    );
 }
 
 export default App;
 
-//---------------------------------------------------------
-// import React, { useState } from 'react';
-// import './App.css';
-// import BarChart from './components/charts/BarChart';
-// import { UserData } from './components/charts/Data';
-// import Crime from './components/Crime';
-// import SearchBar from './components/SearchBar';
 
-// function App() {
-//   const [buyPrices, setBuyPrices] = useState([]);
-//   const [rentPrices, setRentPrices] = useState([]);
-
-//   const handleCityData = (cityData) => {
-//     setBuyPrices(cityData.buyPrices);
-//     setRentPrices(cityData.rentPrices);
-//   };
-
-//   return (
-//     <div className='App'>
-//       <BarChart chartData={UserData.map((data) => data.userGain)} />
-//       <Crime />
-//       <SearchBar onCityData={handleCityData} />
-//       <div>
-//         <h2>Buy Prices</h2>
-//         <ul>
-//           {buyPrices.map((price, index) => (
-//             <li key={index}>{price}</li>
-//           ))}
-//         </ul>
-//       </div>
-//       <div>
-//         <h2>Rent Prices</h2>
-//         <ul>
-//           {rentPrices.map((price, index) => (
-//             <li key={index}>{price}</li>
-//           ))}
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default App;
 
 
