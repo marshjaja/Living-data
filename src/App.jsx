@@ -1,16 +1,13 @@
+<<<<<<< HEAD
 // import React, { useState } from 'react';
 // import PropertyCard from './components/charts/PropertyCard'; // Importing PropertyCard component
 // import SearchBar from './components/SearchBar'; // Importing SearchBar component
+=======
+>>>>>>> 6703f2e0853f2b66f449056772a12c1431254d5d
 
-// function App() {
-//     // State variable to hold property data
-//     const [propertyData, setPropertyData] = useState([]);
 
-//     // Define a function to update property data
-//     const updatePropertyData = (newData) => {
-//         setPropertyData(newData); // Set property data to the new data received
-//     };
 
+<<<<<<< HEAD
 //     return (
 //         <div>
 //             <h1>Property Listings</h1>
@@ -37,6 +34,12 @@
 import React, { useState } from 'react';
 import PropertyCard from './components/charts/PropertyCard'; // Importing PropertyCard component
 import SearchBar from './components/SearchBar'; // Importing SearchBar component
+=======
+import React, { useState } from "react";
+import PropertyCard from "./components/charts/PropertyCard"; // Importing PropertyCard component
+import SearchBar from "./components/SearchBar"; // Importing SearchBar component
+
+>>>>>>> 6703f2e0853f2b66f449056772a12c1431254d5d
 
 function App() {
 	// State variable to hold property data
