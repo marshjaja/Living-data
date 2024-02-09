@@ -51,7 +51,7 @@ function SearchBar() {
             const propertyResponse = await fetch(propertyUrl, propertyOptions);
             const propertyResult = await propertyResponse.json();
 
-            // console.log('Property Result:', propertyResult);
+            console.log('Property Result:', propertyResult);
 
             // Updating the property data state with the fetched data
             setPropertyData(propertyResult);
