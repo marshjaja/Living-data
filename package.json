@@ -10,8 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.6.7",
+    "chart.js": "^4.4.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.0",
+<<<<<<< HEAD
+    "react-chartjs-2": "^5.2.0",
+=======
+>>>>>>> 397bcda33ec5319b113306120c80e97622468da2
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
