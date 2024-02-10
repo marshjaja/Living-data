@@ -22,8 +22,10 @@ function SearchBar() {
             const autoCompleteOptions = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': 'b3562c4c1dmshc0b7700a9473456p18b30ejsn9e3240b972fe',
-                    'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com',
+                    // 'X-RapidAPI-Key': 'b3562c4c1dmshc0b7700a9473456p18b30ejsn9e3240b972fe',
+                    // 'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com',
+                    'X-RapidAPI-Key': '82ec305d5bmsh49968b688af7f99p126625jsn2284021e0d0a',
+                    'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com'
                 },
             };
 
@@ -41,8 +43,10 @@ function SearchBar() {
             const propertyOptions = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': 'b3562c4c1dmshc0b7700a9473456p18b30ejsn9e3240b972fe',
-                    'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com',
+                    // 'X-RapidAPI-Key': 'b3562c4c1dmshc0b7700a9473456p18b30ejsn9e3240b972fe',
+                    // 'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com',
+                    'X-RapidAPI-Key': '82ec305d5bmsh49968b688af7f99p126625jsn2284021e0d0a',
+                    'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com'
                 },
             };
 
