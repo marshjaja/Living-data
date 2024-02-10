@@ -11,10 +11,7 @@
   },
   "dependencies": {
     "axios": "^1.6.7",
-<<<<<<< HEAD
-=======
-    "chart.js": "^4.4.1",
->>>>>>> 35379ccb5e6e97367b1c3ee8dfc014b57f5b66d8
+    "bootstrap": "^5.3.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.0",
     "react-chartjs-2": "^5.2.0",
