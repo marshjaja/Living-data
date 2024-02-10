@@ -19,6 +19,7 @@ function SearchBar() {
         try {
             // Setting up the URL 
             const autoCompleteUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/auto-complete?location=${searchTerm}`;
+            // console.log(searchTerm);
             const autoCompleteOptions = {
                 method: 'GET',
                 headers: {
