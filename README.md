@@ -21,7 +21,7 @@ Welcome to Living Data! This platform is designed to help users find rental prop
 - **Local Crime Data:** Integration of crime rate data to provide users with insights into the safety of the area.
 - **Responsive Design:** Ensuring compatibility across varios devices for seamless user experience.
 
-##Technologies Used
+## Technologies Used
 
 - **React:** Frontend framework for building dynamic interfaces.
 - **JavaScript/ES6+:** Core programming language for frontend development.
@@ -71,3 +71,5 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Happy Searching! 🏠🔍
