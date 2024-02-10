@@ -1,7 +1,5 @@
 # Living Data
 
-Welcome to Living Data! This platform is designed to help users find rental properties in their desired area while also providing information about local crime rates. Built with React, this application offers a user-friendly interface for seamless property exploration and informed decision-making.
-
 ## Contents
 
 - [Introduction](#introduction)
@@ -11,6 +9,29 @@ Welcome to Living Data! This platform is designed to help users find rental prop
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+
+## Introduction
+
+Welcome to Living Data! This platform is designed to help users find rental properties in their desired area while also providing information about local crime rates. Built with React, this application offers a user-friendly interface for seamless property exploration and informed decision-making.
+
+## Features
+
+- **Property Search:** Display of available rental properties by entering their desired location.
+- **Listing Display:** Display of available rental properties in the specifies area.
+- **Local Crime Data:** Integration of crime rate data to provide users with insights into the safety of the area.
+- **Responsive Design:** Ensuring compatibility across varios devices for seamless user experience.
+
+##Technologies Used
+
+- **React:** Frontend framework for building dynamic interfaces.
+- **JavaScript/ES6+:** Core programming language for frontend development.
+- **HTML/CSS:** Markup and styling for web page structure and design.
+- **API Integration:** Utilization of APIs to fetch property listings and crime rate data.
+- **React Bootstrap:** Implementation of responsive design principles using CSS and media queries.
+
+## Getting Started
+
+To run the application locally, follow these steps.
 
 # React + Vite
 
