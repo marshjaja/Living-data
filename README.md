@@ -31,9 +31,39 @@ Welcome to Living Data! This platform is designed to help users find rental prop
 
 ## Getting Started
 
-To run the application locally, follow these steps.
+To run the application locally, follow these steps:
 
-# React + Vite
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies using npm or yarn.
+4. Start the development server.
+5. Open your browser and visit 'http//localhost:30000' to view the application.
+
+## Contributing
+
+We welcome contributions from the community! If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a pull request.
+
+Please ensure your code adheres to our coding standards and includes relevant documentation.
+
+## Contributors
+
+- Marcia Mijnhijmer
+- Cara Joseph
+- Marina Iacomino,
+- Vasie Lacatusu
+- Robyn Windsor
+
+## License
+
+The project is licensed under the [MIT License](https://opensource.org/license/mit/).
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
