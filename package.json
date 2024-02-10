@@ -17,10 +17,7 @@
 >>>>>>> 35379ccb5e6e97367b1c3ee8dfc014b57f5b66d8
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.0",
-<<<<<<< HEAD
     "react-chartjs-2": "^5.2.0",
-=======
->>>>>>> 397bcda33ec5319b113306120c80e97622468da2
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
