@@ -1,9 +1,16 @@
 # Living Data
 
-Welcome to our Property Search Platform! This React-based application allows users to search for properties available for rent and sale. In addition to providing property listings, our platform integrates with a local crime rate API to provide users with information about crime rates associated with specific areas.
+Welcome to Living Data! This platform is designed to help users find rental properties in their desired area while also providing information about local crime rates. Built with React, this application offers a user-friendly interface for seamless property exploration and informed decision-making.
 
+## Contents
 
-
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 # React + Vite
 
