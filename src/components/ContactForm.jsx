@@ -26,11 +26,42 @@ function ContactForm() {
    }
 
 
-//    Validation form to check that all inout fields have been completed by user
+//    Validation form to check that all input fields have been completed by user
    const validateForm = () => {
     const errors = {};
     if (!formData.name.trim()){
         errors.name = 'Name is required';
+    }
+    if (!formData.email.trim()){
+        errors.email = 'Email is required'
+       
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)){
+        errors.email = 'Email is invalid';
+    }
+    if (!formData.subject.trim()){
+        errors.subject = 'Subject is required';
+    }
+    if (!formData.message.trim()){
+        errors.message = 'Message is required';
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+   }
+
+   const handleSubmit = (event) => {
+    event.preventDefault();
+    if (validateForm()){
+        setSubmitting(true);
+        console.log(formData);
+        setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+
+        })
+        setSubmitting(false);
     }
    }
 
