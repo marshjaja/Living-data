@@ -1,16 +1,41 @@
-import React from 'react';
 
-// PropertyCard functional component
-// It receives price and imageSrc as props
-function PropertyCard({ price, imageSrc }) {
-  return (
-    <div className="property-card"> {/* Outer container for the property card */}
-      <img src={imageSrc} alt="Property" /> {/* Property image */}
-      <div className="property-details"> {/* Container for property details */}
-        <p>Price: £{price}</p> {/* Displaying property price */}
-      </div>
-    </div>
-  );
+
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import './PropertyCard.css';
+
+function PropertyCard({ propertyData }) {
+    if (!propertyData || !propertyData.data) {
+        return null; 
+    }
+
+    return (
+        <div>
+            {propertyData.data.map(property => (
+                <div key={property.id} className="main-container">
+                    <div className="property-card-container">
+                        <div className="image-container">
+                            {property.propertyImages && property.propertyImages.mainImageSrc && (
+                                <img src={property.propertyImages.mainImageSrc} alt="Main Image" style={{ width: '400px' }} />
+                            )}
+                        </div>
+                        <div className="card-container">
+                            <Card>
+                                <Card.Body>
+                                    <Card.Title>Property Details</Card.Title>
+                                    <p>Address: {property.displayAddress}</p>
+                                    <p>Price: {property.price.amount} GBP</p>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
 }
 
-export default PropertyCard; 
+export default PropertyCard;
+
+
+
