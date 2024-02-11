@@ -20,13 +20,13 @@ function PropertyCard({ propertyData }) {
                             )}
                         </div>
                         <div className="card-container">
-                            <Card>
+                            <Card-propriety>
                                 <Card.Body>
                                     <Card.Title>Property Details</Card.Title>
                                     <p>Address: {property.displayAddress}</p>
                                     <p>Price: {property.price.amount} GBP</p>
                                 </Card.Body>
-                            </Card>
+                            </Card-propriety>
                         </div>
                     </div>
                 </div>
