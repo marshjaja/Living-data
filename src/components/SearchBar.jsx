@@ -111,6 +111,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import PropertyCard from './charts/PropertyCard'; // Corrected import path
 
+
 function SearchBar({ setPropertyData }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [propertyData, setPropertyDataState] = useState(null); // Changed variable name to avoid conflict

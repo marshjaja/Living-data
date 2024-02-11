@@ -1,17 +1,34 @@
 import React, { useState } from 'react';
-import SearchBar from './components/SearchBar';
-import PropertyCard from './components/charts/PropertyCard';
+import PropertyCard from './components/charts/PropertyCard'; // Importing PropertyCard component
+import SearchBar from './components/SearchBar'; // Importing SearchBar component
+import ContactForm from './components/ContactForm';
+
 
 function App() {
-    const [propertyData, setPropertyData] = useState([]);
+  // State variable to hold property data
+  const [propertyData, setPropertyData] = useState([]);
 
-    return (
-        <div className="container">
-            <h1 className="mt-5">Property Listings</h1>
-            <SearchBar setPropertyData={setPropertyData} />
-            <PropertyCard propertyData={propertyData} />
-        </div>
-    );
+  // Define a function to update property data
+  const updatePropertyData = (newData) => {
+    setPropertyData(newData); // Set property data to the new data received
+  };
+
+  return (
+    <div>
+      <ContactForm />
+      <h1>Property Listings</h1>
+      {/* Render the SearchBar component and pass updatePropertyData as a prop */}
+      <SearchBar updatePropertyData={updatePropertyData} />
+      {/* Render PropertyCard for each property */}
+      {propertyData.map((property) => (
+        <PropertyCard
+          key={property.id}
+          price={property.price.amount}
+          imageSrc={property.propertyImages[0].srcUrl}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default App;
