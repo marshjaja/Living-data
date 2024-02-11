@@ -3,6 +3,7 @@ import PropertyCard from './components/charts/PropertyCard'; // Importing Proper
 import SearchBar from './components/SearchBar'; // Importing SearchBar component
 import ContactForm from './components/ContactForm';
 
+
 function App() {
   // State variable to hold property data
   const [propertyData, setPropertyData] = useState([]);
