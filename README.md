@@ -56,8 +56,8 @@ Please ensure your code adheres to our coding standards and includes relevant do
 - Marcia Mijnhijmer
 - Cara Joseph
 - Marina Iacomino,
-- Vasie Lacatusu
 - Robyn Windsor
+- Vasile Lacatusu
 
 ## License
 
