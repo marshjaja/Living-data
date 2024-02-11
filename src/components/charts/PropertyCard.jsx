@@ -36,3 +36,6 @@ function PropertyCard({ propertyData }) {
 }
 
 export default PropertyCard;
+
+
+

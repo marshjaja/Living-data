@@ -124,6 +124,7 @@ function SearchBar({ setPropertyData }) {
 
         try {
             const autoCompleteUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/auto-complete?location=${searchTerm}`;
+            console.log(searchTerm);
             const autoCompleteOptions = {
                 method: 'GET',
                 headers: {
@@ -134,6 +135,9 @@ function SearchBar({ setPropertyData }) {
 
             const autoCompleteResponse = await fetch(autoCompleteUrl, autoCompleteOptions);
             const autoCompleteResult = await autoCompleteResponse.json();
+
+            console.log('AutoComplete Result:', autoCompleteResult);
+
 
             const regionCode = autoCompleteResult?.data[0]?.locationIdentifier;
 
@@ -148,6 +152,8 @@ function SearchBar({ setPropertyData }) {
 
             const propertyResponse = await fetch(propertyUrl, propertyOptions);
             const propertyResult = await propertyResponse.json();
+
+            console.log('Property Result:', propertyResult);
 
             // Set property data using setPropertyData function
             setPropertyData(propertyResult);
