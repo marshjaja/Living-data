@@ -1,34 +1,32 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import React, { useState } from 'react';
+import PropertyCard from './components/charts/PropertyCard'; // Importing PropertyCard component
+import SearchBar from './components/SearchBar'; // Importing SearchBar component
+import ContactForm from './components/ContactForm';
 
 function App() {
-  const [count, setCount] = useState(0);
+  // State variable to hold property data
+  const [propertyData, setPropertyData] = useState([]);
+
+  // Define a function to update property data
+  const updatePropertyData = (newData) => {
+    setPropertyData(newData); // Set property data to the new data received
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Living Data</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <ContactForm />
+      <h1>Property Listings</h1>
+      {/* Render the SearchBar component and pass updatePropertyData as a prop */}
+      <SearchBar updatePropertyData={updatePropertyData} />
+      {/* Render PropertyCard for each property */}
+      {propertyData.map((property) => (
+        <PropertyCard
+          key={property.id}
+          price={property.price.amount}
+          imageSrc={property.propertyImages[0].srcUrl}
+        />
+      ))}
+    </div>
   );
 }
 
