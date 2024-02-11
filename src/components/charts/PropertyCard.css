@@ -26,3 +26,7 @@
     flex: 1;
 }
 
+/* Set smaller font size for text */
+.property-card-container p {
+    font-size: 14px; /* Adjust font size as needed */
+}
