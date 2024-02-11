@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
 // Contact Form Logic
@@ -71,7 +72,12 @@ function ContactForm() {
       <form className="contactForm" onSubmit={handleSubmit}>
         <div className="nameForm">
           <label>Name: </label>
-          <input type="text" name="name" value={formData.name} />
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
           {formErrors.name && <span className="error"> {formErrors.name}</span>}
         </div>
         <div className="emailForm">
@@ -110,8 +116,7 @@ function ContactForm() {
             )}
           </div>
         </div>
-        <button type="submit" disabled={submitting}>
-          {submitting ? 'Submitting...' : 'Submit'}
+        <button className="contactButton" type="submit" disabled={submitting}>
           Submit
         </button>
       </form>
