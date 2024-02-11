@@ -27,6 +27,19 @@
   }
 }
 
+.container {
+  display: flex;
+}
+input {
+  border-radius: 5px;
+  margin: 10px auto;
+  padding: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;

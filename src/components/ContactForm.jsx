@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css';
 
 // Contact Form Logic
 function ContactForm() {
@@ -66,51 +67,55 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Name:</label>
-        <input type="text" name="name" value={formData.name} />
-        {formErrors.name && <span className="error"> {formErrors.name}</span>}
-      </div>
-      <div>
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        {formErrors.email && <span className="error">{formErrors.email}</span>}
-        <div>
-          <label>Subject:</label>
+    <div className="container">
+      <form className="contactForm" onSubmit={handleSubmit}>
+        <div className="nameForm">
+          <label>Name: </label>
+          <input type="text" name="name" value={formData.name} />
+          {formErrors.name && <span className="error"> {formErrors.name}</span>}
+        </div>
+        <div className="emailForm">
+          <label>Email: </label>
           <input
-            type="text"
-            name="subject"
-            value={formData.subject}
+            type="email"
+            name="email"
+            value={formData.email}
             onChange={handleChange}
+            required
           />
-          {formErrors.subject && (
-            <span className="error">{formErrors.subject}</span>
+          {formErrors.email && (
+            <span className="error">{formErrors.email}</span>
           )}
+          <div className="subjectForm">
+            <label>Subject: </label>
+            <input
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+            />
+            {formErrors.subject && (
+              <span className="error">{formErrors.subject}</span>
+            )}
+          </div>
+          <div className="messageForm">
+            <label>Message: </label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+            />
+            {formErrors.message && (
+              <span className=" error">{formErrors.message}</span>
+            )}
+          </div>
         </div>
-        <div>
-          <label>Message:</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-          />
-          {formErrors.message && (
-            <span className=" error">{formErrors.message}</span>
-          )}
-        </div>
-      </div>
-      <button type="submit" disabled={submitting}>
-        {submitting ? 'Submitting...' : 'Submit'}
-        Submit
-      </button>
-    </form>
+        <button type="submit" disabled={submitting}>
+          {submitting ? 'Submitting...' : 'Submit'}
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }
 
