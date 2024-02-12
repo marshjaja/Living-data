@@ -38,36 +38,6 @@
 // export default App;
 
 //-----------------
-import React, { useState } from "react";
-import PropertyCard from "./components/charts/PropertyCard"; // Importing PropertyCard component
-import SearchBar from "./components/SearchBar"; // Importing SearchBar component
-import Crime from "./components/Crime";
-
-function App() {
-	// State variable to hold property data
-	const [propertyData, setPropertyData] = useState([]);
-
-	// Define a function to update property data
-	const updatePropertyData = (newData) => {
-		setPropertyData(newData); // Set property data to the new data received
-	};
-
-	return (
-		<div>
-			<h1>Property Listings</h1>
-			{/* Render the SearchBar component and pass updatePropertyData as a prop */}
-			<SearchBar updatePropertyData={updatePropertyData} />
-			{/* Render PropertyCard for each property */}
-			{propertyData.map((property) => (
-				<PropertyCard
-					key={property.id}
-					price={property.price.amount}
-					imageSrc={property.propertyImages[0].srcUrl}
-				/>
-			))}
-			<Crime />
-		</div>
-	);
 
 //------------------------------------------
 // import React, { useState } from 'react';
@@ -105,29 +75,30 @@ function App() {
 
 //------------------
 
-import React, { useState } from 'react';
-import SearchBar from './components/SearchBar';
-import PropertyCard from './components/PropertyCard/PropertyCard';
-import ContactForm from './components/ContactForm';
-import Header from './components/Header';
-import About from './components/About'
+import React, { useState } from "react";
+import SearchBar from "./components/SearchBar";
+import PropertyCard from "./components/PropertyCard/PropertyCard";
+import ContactForm from "./components/ContactForm";
+import Header from "./components/Header";
+import About from "./components/About";
+import Crime from "./components/Crime";
 
 function App() {
-    const [propertyData, setPropertyData] = useState(null);
+	const [propertyData, setPropertyData] = useState(null);
 
-    return (
-        <div>
+	return (
+		<div>
+			<header id="header">
+				<Header />
+			</header>
+			<ContactForm />
+			<h1>Property Listings</h1>
+			<SearchBar setPropertyData={setPropertyData} />
+			<PropertyCard propertyData={propertyData} />
 
-            <Header />
-            <ContactForm />
-            <h1>Property Listings</h1>
-            <SearchBar setPropertyData={setPropertyData} />
-            <PropertyCard propertyData={propertyData} />
-            {/* <Crime /> */}
-        </div>
-    );
+			<Crime />
+		</div>
+	);
 }
 
 export default App;
-
-
