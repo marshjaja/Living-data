@@ -75,7 +75,7 @@
 
 import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
-import PropertyCard from './components/charts/PropertyCard';
+import PropertyCard from './components/PropertyCard/PropertyCard';
 import ContactForm from './components/ContactForm';
 
 function App() {
