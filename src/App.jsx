@@ -78,23 +78,28 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PropertyCard from './components/PropertyCard/PropertyCard';
 import ContactForm from './components/ContactForm';
 import Home from './pages/Home';
+import SearchBar from './components/SearchBar';
+import Header from './components/Header';
+import Crime from './components/Crime';
 
 function App() {
   const [propertyData, setPropertyData] = useState(null);
 
   return (
     <div>
+      <Header />
+
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/" element={<ContactForm />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/contact-form" element={<ContactForm />} />
           <Route path="/propery-card" element={<PropertyCard />} />
         </Routes>
       </BrowserRouter>
-      {/* <h1>Property Listings</h1>
+      <h1>Property Listings</h1>
       <SearchBar setPropertyData={setPropertyData} />
-      <PropertyCard propertyData={propertyData} /> */}
+      <PropertyCard propertyData={propertyData} />
+      <Crime />
     </div>
   );
 }
