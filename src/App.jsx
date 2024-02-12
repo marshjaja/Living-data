@@ -37,6 +37,8 @@
 
 // export default App;
 
+//-----------------
+
 //------------------------------------------
 // import React, { useState } from 'react';
 // import PropertyCard from './components/charts/PropertyCard'; // Corrected import path
@@ -73,29 +75,30 @@
 
 //------------------
 
-import React, { useState } from 'react';
-import SearchBar from './components/SearchBar';
-import PropertyCard from './components/PropertyCard/PropertyCard';
-import ContactForm from './components/ContactForm';
-import Header from './components/Header';
-import About from './components/About'
+import React, { useState } from "react";
+import SearchBar from "./components/SearchBar";
+import PropertyCard from "./components/PropertyCard/PropertyCard";
+import ContactForm from "./components/ContactForm";
+import Header from "./components/Header";
+import About from "./components/About";
+import Crime from "./components/Crime";
 
 function App() {
-    const [propertyData, setPropertyData] = useState(null);
+	const [propertyData, setPropertyData] = useState(null);
 
-    return (
-        <div>
-                <header id="header">
-                <Header />
-                </header>
-            <ContactForm />
-            <h1>Property Listings</h1>
-            <SearchBar setPropertyData={setPropertyData} />
-            <PropertyCard propertyData={propertyData} />
-        </div>
-    );
+	return (
+		<div>
+			<header id="header">
+				<Header />
+			</header>
+			<ContactForm />
+			<h1>Property Listings</h1>
+			<SearchBar setPropertyData={setPropertyData} />
+			<PropertyCard propertyData={propertyData} />
+
+			<Crime />
+		</div>
+	);
 }
 
 export default App;
-
-
