@@ -1,5 +1,5 @@
 
-import headerImg from '../assets/images/header_img.jpg';
+import headerImg from '../assets/images/headerPhoto.jpg';
 import SearchBar from './SearchBar';
 import "../App.css";
 
