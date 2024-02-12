@@ -14,10 +14,10 @@
 
 //     // Function to handle the search action
 //     const handleSearch = async (e) => {
-//         e.preventDefault(); // Preventing default form submission 
+//         e.preventDefault(); // Preventing default form submission
 
 //         try {
-//             // Setting up the URL 
+//             // Setting up the URL
 //             const autoCompleteUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/auto-complete?location=${searchTerm}`;
 //             // console.log(searchTerm);
 //             const autoCompleteOptions = {
@@ -111,7 +111,6 @@
 // import Button from 'react-bootstrap/Button';
 // import PropertyCard from './charts/PropertyCard'; // Corrected import path
 
-
 // function SearchBar({ setPropertyData }) {
 //     const [searchTerm, setSearchTerm] = useState('');
 //     const [propertyData, setPropertyDataState] = useState(null); // Changed variable name to avoid conflict
@@ -138,7 +137,6 @@
 //             const autoCompleteResult = await autoCompleteResponse.json();
 
 //             console.log('AutoComplete Result:', autoCompleteResult);
-
 
 //             const regionCode = autoCompleteResult?.data[0]?.locationIdentifier;
 
@@ -222,7 +220,6 @@
 
 //             console.log('AutoComplete Result:', autoCompleteResult);
 
-
 //             const regionCode = autoCompleteResult?.data[0]?.locationIdentifier;
 
 //             const propertyUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/rent/property-to-rent?identifier=${regionCode}&search_radius=0.0`;
@@ -278,67 +275,72 @@ import Button from 'react-bootstrap/Button';
 import PropertyCard from './PropertyCard/PropertyCard'; // Importing PropertyCard component
 
 function SearchBar({ setPropertyData }) {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [loading, setLoading] = useState(false);
 
-    const handleInputChange = (e) => {
-        setSearchTerm(e.target.value);
-    };
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
-    const handleSearch = async (e) => {
-        e.preventDefault();
-        setLoading(true);
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-        try {
-            const autoCompleteUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/auto-complete?location=${searchTerm}`;
-            const autoCompleteOptions = {
-                method: 'GET',
-                headers: {
-                    'X-RapidAPI-Key': '82ec305d5bmsh49968b688af7f99p126625jsn2284021e0d0a',
-                    'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com'
-                },
-            };
+    try {
+      const autoCompleteUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/auto-complete?location=${searchTerm}`;
+      const autoCompleteOptions = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key':
+            '82ec305d5bmsh49968b688af7f99p126625jsn2284021e0d0a',
+          'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com',
+        },
+      };
 
-            const autoCompleteResponse = await fetch(autoCompleteUrl, autoCompleteOptions);
-            const autoCompleteResult = await autoCompleteResponse.json();
+      const autoCompleteResponse = await fetch(
+        autoCompleteUrl,
+        autoCompleteOptions
+      );
+      const autoCompleteResult = await autoCompleteResponse.json();
 
-            const regionCode = autoCompleteResult?.data[0]?.locationIdentifier;
+      const regionCode = autoCompleteResult?.data[0]?.locationIdentifier;
 
-            const propertyUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/rent/property-to-rent?identifier=${regionCode}&search_radius=0.0`;
-            const propertyOptions = {
-                method: 'GET',
-                headers: {
-                    'X-RapidAPI-Key': '82ec305d5bmsh49968b688af7f99p126625jsn2284021e0d0a',
-                    'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com'
-                },
-            };
+      const propertyUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/rent/property-to-rent?identifier=${regionCode}&search_radius=0.0`;
+      const propertyOptions = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key':
+            '82ec305d5bmsh49968b688af7f99p126625jsn2284021e0d0a',
+          'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com',
+        },
+      };
 
-            const propertyResponse = await fetch(propertyUrl, propertyOptions);
-            const propertyResult = await propertyResponse.json();
+      const propertyResponse = await fetch(propertyUrl, propertyOptions);
+      const propertyResult = await propertyResponse.json();
 
-            setPropertyData(propertyResult);
-        } catch (error) {
-            console.error(error);
-        } finally {
-            setLoading(false);
-        }
-    };
+      setPropertyData(propertyResult);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    return (
-        <div>
-            <Form onSubmit={handleSearch}>
-                <Form.Control
-                    type='text'
-                    placeholder='Search by Region name'
-                    value={searchTerm}
-                    onChange={handleInputChange}
-                />
-                <Button type='submit' disabled={loading}>
-                    {loading ? 'Searching...' : 'Search'}
-                </Button>
-            </Form>
-        </div>
-    );
+  return (
+    <div>
+      <Form onSubmit={handleSearch}>
+        <Form.Control
+          type="text"
+          placeholder="Search by Region name"
+          value={searchTerm}
+          onChange={handleInputChange}
+        />
+        <Button type="submit" disabled={loading}>
+          {loading ? 'Searching...' : 'Search'}
+        </Button>
+      </Form>
+    </div>
+  );
 }
 
 export default SearchBar;

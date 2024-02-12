@@ -75,10 +75,9 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import SearchBar from './components/SearchBar';
 import PropertyCard from './components/PropertyCard/PropertyCard';
 import ContactForm from './components/ContactForm';
-import Contact from './pages/Contact';
+import Home from './pages/Home';
 
 function App() {
   const [propertyData, setPropertyData] = useState(null);
@@ -88,12 +87,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<ContactForm />} /> */}
-          <Route path="/" element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/contact-form" element={<ContactForm />} />
+          <Route path="/propery-card" element={<PropertyCard />} />
         </Routes>
       </BrowserRouter>
-      <h1>Property Listings</h1>
+      {/* <h1>Property Listings</h1>
       <SearchBar setPropertyData={setPropertyData} />
-      <PropertyCard propertyData={propertyData} />
+      <PropertyCard propertyData={propertyData} /> */}
     </div>
   );
 }
