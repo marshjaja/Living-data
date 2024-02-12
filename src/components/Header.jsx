@@ -1,3 +1,4 @@
+
 import SearchBar from './SearchBar';
 import "../App.css";
 
@@ -51,3 +52,4 @@ const Header = () => {
 }
 
 export default Header     
+
