@@ -77,16 +77,19 @@ import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import PropertyCard from './components/PropertyCard/PropertyCard';
 import ContactForm from './components/ContactForm';
+import Header from './components/Header';
 
 function App() {
     const [propertyData, setPropertyData] = useState(null);
 
     return (
         <div>
+              <Header />
             <ContactForm />
             <h1>Property Listings</h1>
             <SearchBar setPropertyData={setPropertyData} />
             <PropertyCard propertyData={propertyData} />
+            {/* <Crime /> */}
         </div>
     );
 }
