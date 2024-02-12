@@ -1,12 +1,11 @@
 
-
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import './PropertyCard.css';
 
 function PropertyCard({ propertyData }) {
     if (!propertyData || !propertyData.data) {
-        return null; 
+        return null;
     }
 
     return (
@@ -20,13 +19,20 @@ function PropertyCard({ propertyData }) {
                             )}
                         </div>
                         <div className="card-container">
-                            <Card>
+                            <Card-propriety>
                                 <Card.Body>
-                                    <Card.Title>Property Details</Card.Title>
+                                    {/* <Card.Title>Property Details</Card.Title> */}
                                     <p>Address: {property.displayAddress}</p>
-                                    <p>Price: {property.price.amount} GBP</p>
+                                    {/* <p>Price: {property.price.amount} GBP</p> */}
+                                    <p>Property Type: {property.propertyTypeFullDescription}</p>
+                                    <p>Bedrooms: {property.bedrooms}</p>
+                                    <p>Bathrooms: {property.bathrooms}</p>
+                                    {/* <p>Summary: {property.summary}</p> */}
+                                    <p>Price: {property.price.displayPrices[0].displayPrice}</p>
+                                    {/* <p>Price: {property.price.displayPrices[1].displayPrice}</p> */}
+                                    <p>Contact: {property.customer.contactTelephone}</p>
                                 </Card.Body>
-                            </Card>
+                            </Card-propriety>
                         </div>
                     </div>
                 </div>
@@ -36,6 +42,3 @@ function PropertyCard({ propertyData }) {
 }
 
 export default PropertyCard;
-
-
-
