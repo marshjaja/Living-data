@@ -292,7 +292,7 @@ function SearchBar({ setPropertyData }) {
         method: 'GET',
         headers: {
           'X-RapidAPI-Key':
-            '82ec305d5bmsh49968b688af7f99p126625jsn2284021e0d0a',
+            '72af507e69msh04ba0c14cca9fe0p1556b3jsn418cd33a3d80',
           'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com',
         },
       };
@@ -310,7 +310,7 @@ function SearchBar({ setPropertyData }) {
         method: 'GET',
         headers: {
           'X-RapidAPI-Key':
-            '82ec305d5bmsh49968b688af7f99p126625jsn2284021e0d0a',
+            '72af507e69msh04ba0c14cca9fe0p1556b3jsn418cd33a3d80',
           'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com',
         },
       };
