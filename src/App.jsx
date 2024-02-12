@@ -74,23 +74,26 @@
 //------------------
 
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
 import PropertyCard from './components/PropertyCard/PropertyCard';
 import ContactForm from './components/ContactForm';
 
 function App() {
-    const [propertyData, setPropertyData] = useState(null);
+  const [propertyData, setPropertyData] = useState(null);
 
-    return (
-        <div>
-            <ContactForm />
-            <h1>Property Listings</h1>
-            <SearchBar setPropertyData={setPropertyData} />
-            <PropertyCard propertyData={propertyData} />
-        </div>
-    );
+  return (
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="contactForm" element={<ContactForm />}></Route>
+        </Routes>
+      </BrowserRouter>
+      <h1>Property Listings</h1>
+      <SearchBar setPropertyData={setPropertyData} />
+      <PropertyCard propertyData={propertyData} />
+    </div>
+  );
 }
 
 export default App;
-
-
