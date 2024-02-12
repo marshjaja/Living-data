@@ -37,6 +37,7 @@
 import React, { useState } from "react";
 import PropertyCard from "./components/charts/PropertyCard"; // Importing PropertyCard component
 import SearchBar from "./components/SearchBar"; // Importing SearchBar component
+import Crime from "./components/Crime";
 
 function App() {
 	// State variable to hold property data
@@ -60,6 +61,7 @@ function App() {
 					imageSrc={property.propertyImages[0].srcUrl}
 				/>
 			))}
+			<Crime />
 		</div>
 	);
 }
