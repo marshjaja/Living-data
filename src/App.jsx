@@ -78,6 +78,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
 import PropertyCard from './components/PropertyCard/PropertyCard';
 import ContactForm from './components/ContactForm';
+import Contact from './pages/Contact';
 
 function App() {
   const [propertyData, setPropertyData] = useState(null);
@@ -86,7 +87,8 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="contactForm" element={<ContactForm />}></Route>
+          {/* <Route path="/" element={<ContactForm />} /> */}
+          <Route path="/" element={<Contact />} />
         </Routes>
       </BrowserRouter>
       <h1>Property Listings</h1>
