@@ -1,6 +1,5 @@
 
 import headerImg from '../assets/images/headerPhoto.jpg';
-
 import SearchBar from './SearchBar';
 import "../App.css";
 
@@ -54,4 +53,4 @@ const Header = () => {
 }
 
 export default Header     
->>>>>>>>> Temporary merge branch 2
+
