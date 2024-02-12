@@ -1,0 +1,31 @@
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Add margin bottom to create a gap */
+    background-color: #c0c0c0; /* Set slightly darker light gray color */
+    width: 800px; /* Set width */
+    height: 400px; /* Set height */
+    padding: 20px; /* Add padding for spacing inside the main container */
+    color: #333; /* Set darker text color */
+}
+
+.property-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.image-container {
+    margin-right: 20px;
+}
+
+.card-container {
+    flex: 1;
+}
+
+/* Set smaller font size for text */
+.property-card-container p {
+    font-size: 14px; /* Adjust font size as needed */
+}
