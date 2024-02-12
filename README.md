@@ -1,4 +1,69 @@
-# React + Vite
+# Living Data
+
+## Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Introduction
+
+Welcome to Living Data! This platform is designed to help users find rental properties in their desired area while also providing information about local crime rates. Built with React, this application offers a user-friendly interface for seamless property exploration and informed decision-making.
+
+## Features
+
+- **Property Search:** Display of available rental properties by entering their desired location.
+- **Listing Display:** Display of available rental properties in the specifies area.
+- **Local Crime Data:** Integration of crime rate data to provide users with insights into the safety of the area.
+- **Responsive Design:** Ensuring compatibility across varios devices for seamless user experience.
+
+## Technologies Used
+
+- **React:** Frontend framework for building dynamic interfaces.
+- **JavaScript/ES6+:** Core programming language for frontend development.
+- **HTML/CSS:** Markup and styling for web page structure and design.
+- **API Integration:** Utilization of APIs to fetch property listings and crime rate data.
+- **React Bootstrap:** Implementation of responsive design principles using CSS and media queries.
+
+## Getting Started
+
+To run the application locally, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies using npm or yarn.
+4. Start the development server.
+5. Open your browser and visit 'http//localhost:30000' to view the application.
+
+## Contributing
+
+We welcome contributions from the community! If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a pull request.
+
+Please ensure your code adheres to our coding standards and includes relevant documentation.
+
+## Contributors
+
+- Marcia Mijnhijmer
+- Cara Joseph
+- Marina Iacomino,
+- Robyn Windsor
+- Vasile Lacatusu
+
+## License
+
+The project is licensed under the [MIT License](https://opensource.org/license/mit/).
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -6,3 +71,5 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Happy Searching! 🏠🔍
