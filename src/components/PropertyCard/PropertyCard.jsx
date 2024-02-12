@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import './PropertyCard.css';
@@ -43,4 +42,3 @@ function PropertyCard({ propertyData }) {
 }
 
 export default PropertyCard;
-
