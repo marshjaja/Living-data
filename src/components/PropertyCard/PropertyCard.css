@@ -27,5 +27,6 @@
 
 /* Set smaller font size for text */
 .property-card-container p {
-    font-size: 14px; /* Adjust font size as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    color: rgb(119, 5, 58);
 }
