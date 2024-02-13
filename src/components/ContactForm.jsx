@@ -69,6 +69,14 @@ function ContactForm() {
       const templateId = 'contact_form';
       const publicKey = '8git3JVuOnc7ohSsY';
 
+      // Creating a new object that conatins dynamic template params
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        to_name: 'Web Wizard',
+        message: message,
+      };
+
       // setSubmitting will clear the form once form is validated and submitted by setting submitting state to false
       setSubmitting(false);
     }
