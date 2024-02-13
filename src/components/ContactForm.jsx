@@ -56,14 +56,6 @@ function ContactForm() {
     event.preventDefault();
     if (validateForm()) {
       setSubmitting(true);
-      console.log(formData);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-
       // Creating EmailJ serviceID, templateID and Public Key
       const serviceId = 'service_gj1vtaf';
       const templateId = 'contact_form';
@@ -71,11 +63,24 @@ function ContactForm() {
 
       // Creating a new object that conatins dynamic template params
       const templateParams = {
-        from_name: name,
-        from_email: email,
-        to_name: 'Web Wizard',
-        message: message,
+        from_name: formData.name,
+        from_email: formData.email,
+        to_name: 'Living Data',
+        subject: formData.subject,
+        message: formData.message,
       };
+      emailjs
+        .send(serviceId, templateId, templateParams, publicKey)
+        .then((response) => {
+          console.log('Email sent successfully!', response);
+        });
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
 
       // setSubmitting will clear the form once form is validated and submitted by setting submitting state to false
       setSubmitting(false);
