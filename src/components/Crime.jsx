@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Collapse, Image } from "react-bootstrap";
+import PieChart from "./PieChart";
 
 function Crime() {
 	const [input, setInput] = useState("");
@@ -188,20 +189,7 @@ function Crime() {
 										<Card.Body>
 											<Image src="..." class="card-img-top" alt="..." />
 											<div class="card-body">
-												<h5 class="card-title placeholder-glow">
-													<span class="placeholder col-6"></span>
-												</h5>
-												<p class="card-text placeholder-glow">
-													<span class="placeholder col-7"></span>
-													<span class="placeholder col-4"></span>
-													<span class="placeholder col-4"></span>
-													<span class="placeholder col-6"></span>
-													<span class="placeholder col-8"></span>
-												</p>
-												<a
-													class="btn btn-primary disabled placeholder col-6"
-													aria-disabled="true"
-												></a>
+												<PieChart />
 											</div>
 										</Card.Body>
 									</Card>

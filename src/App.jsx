@@ -82,6 +82,7 @@ import ContactForm from "./components/ContactForm";
 import Header from "./components/Header";
 import About from "./components/About";
 import Crime from "./components/Crime";
+import PieChart from "./components/PieChart";
 
 function App() {
 	const [propertyData, setPropertyData] = useState(null);
@@ -95,7 +96,6 @@ function App() {
 			<h1>Property Listings</h1>
 			<SearchBar setPropertyData={setPropertyData} />
 			<PropertyCard propertyData={propertyData} />
-
 			<Crime />
 		</div>
 	);
