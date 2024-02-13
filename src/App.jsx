@@ -75,13 +75,65 @@
 
 //------------------
 
+// import React, { useState } from "react";
+// import SearchBar from "./components/SearchBar";
+// import PropertyCard from "./components/PropertyCard/PropertyCard";
+// import ContactForm from "./components/ContactForm";
+// import Header from "./components/Header";
+// import About from "./components/About";
+// import Crime from "./components/Crime";
+// import Footer from './components/Footer';
+// // import BarChart from "./components/Chart/BarChart";
+
+// function App() {
+// 	const [propertyData, setPropertyData] = useState(null);
+// 	// const [userData, setUserData] = setState({
+// 	// 	lsbels: UserData.map((data)=> data.year) ,
+// 	// 	dataset: [
+// 	// 		{
+// 	// 			label:" User Gained",
+// 	// 			data: UserData.map((data)=> data.userGain),
+// 	// 			backgroundColor:["green", "blue"],
+// 	// 			borderColor:"black",
+// 	// 			borderWidth:2,
+
+// 	// 		},
+// 	// 	],
+// 	// });
+
+// 	return (
+// 		<div>
+// 			<header id="header">
+// 				<Header />
+// 			</header>
+// 			<ContactForm />
+// 			<h1>Property Listings</h1>
+// 			<SearchBar setPropertyData={setPropertyData} />
+// 			<PropertyCard propertyData={propertyData} />
+// 			<About />
+
+// 			<Crime />
+// 			{/* <div style={{width:600}}>
+// 			<BarChart chartData={userData } />
+// 			</div> */}
+			
+// 			<footer>
+// 				<Footer />
+// 			</footer>
+// 		</div>
+// 	);
+// }
+
+// export default App;
+//--------------------------------------------------
+
 import React, { useState } from "react";
+import Header from "./components/Header";
+import ContactForm from "./components/ContactForm";
 import SearchBar from "./components/SearchBar";
 import PropertyCard from "./components/PropertyCard/PropertyCard";
-import ContactForm from "./components/ContactForm";
-import Header from "./components/Header";
 import About from "./components/About";
-import Crime from "./components/Crime";
+import Crime from "./components/Crime"; // Import the Crime component
 import Footer from './components/Footer';
 
 function App() {
@@ -96,12 +148,13 @@ function App() {
 			<h1>Property Listings</h1>
 			<SearchBar setPropertyData={setPropertyData} />
 			<PropertyCard propertyData={propertyData} />
-            <About />
+			<About />
 
-			<Crime />
-            <footer>
-      <Footer />
-    </footer>
+			
+			<Crime /> {/* Render the Crime component */}
+			<footer>
+				<Footer />
+			</footer>
 		</div>
 	);
 }
