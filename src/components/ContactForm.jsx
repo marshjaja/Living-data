@@ -63,6 +63,12 @@ function ContactForm() {
         subject: '',
         message: '',
       });
+
+      // Creating EmailJ serviceID, templateID and Public Key
+      const serviceId = 'service_gj1vtaf';
+      const templateId = 'contact_form';
+      const publicKey = '8git3JVuOnc7ohSsY';
+
       // setSubmitting will clear the form once form is validated and submitted by setting submitting state to false
       setSubmitting(false);
     }
