@@ -10,7 +10,12 @@ import Alert from "react-bootstrap/Alert";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Collapse, Image } from "react-bootstrap";
 
-function Crime() {
+function Crime({ crimeData }) {
+	console.log(crimeData)
+
+	// const { crimeSafeRate, rateSafeColor } = crimeData; // deconstruction props
+
+
 	const [input, setInput] = useState("");
 	const [searchTerm, setSearchTerm] = useState("");
 	const [crimeRate, setCrimeRate] = useState("");
@@ -150,20 +155,20 @@ function Crime() {
 						<div id="collapse-text" className="mt-3">
 							<Card>
 								<Card.Body>
-									<Image src="..." class="card-img-top" alt="..." />
-									<div class="card-body">
-										<h5 class="card-title placeholder-glow">
-											<span class="placeholder col-6"></span>
+									<Image src="..." className="card-img-top" alt="..." />
+									<div className="card-body">
+										<h5 className="card-title placeholder-glow">
+											<span className="placeholder col-6"></span>
 										</h5>
-										<p class="card-text placeholder-glow">
-											<span class="placeholder col-7"></span>
-											<span class="placeholder col-4"></span>
-											<span class="placeholder col-4"></span>
-											<span class="placeholder col-6"></span>
-											<span class="placeholder col-8"></span>
+										<p className="card-text placeholder-glow">
+											<span className="placeholder col-7"></span>
+											<span className="placeholder col-4"></span>
+											<span className="placeholder col-4"></span>
+											<span className="placeholder col-6"></span>
+											<span className="placeholder col-8"></span>
 										</p>
 										<a
-											class="btn btn-primary disabled placeholder col-6"
+											className="btn btn-primary disabled placeholder col-6"
 											aria-disabled="true"
 										></a>
 									</div>
@@ -186,20 +191,20 @@ function Crime() {
 								<div id="collapse-text" className="mt-3">
 									<Card>
 										<Card.Body>
-											<Image src="..." class="card-img-top" alt="..." />
-											<div class="card-body">
-												<h5 class="card-title placeholder-glow">
-													<span class="placeholder col-6"></span>
+											<Image src="..." className="card-img-top" alt="..." />
+											<div className="card-body">
+												<h5 className="card-title placeholder-glow">
+													<span className="placeholder col-6"></span>
 												</h5>
-												<p class="card-text placeholder-glow">
-													<span class="placeholder col-7"></span>
-													<span class="placeholder col-4"></span>
-													<span class="placeholder col-4"></span>
-													<span class="placeholder col-6"></span>
-													<span class="placeholder col-8"></span>
+												<p className="card-text placeholder-glow">
+													<span className="placeholder col-7"></span>
+													<span className="placeholder col-4"></span>
+													<span className="placeholder col-4"></span>
+													<span className="placeholder col-6"></span>
+													<span className="placeholder col-8"></span>
 												</p>
 												<a
-													class="btn btn-primary disabled placeholder col-6"
+													className="btn btn-primary disabled placeholder col-6"
 													aria-disabled="true"
 												></a>
 											</div>

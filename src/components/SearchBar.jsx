@@ -380,9 +380,91 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import PropertyCard from "./PropertyCard/PropertyCard"; // Importing PropertyCard component
 
-function SearchBar({ setPropertyData }) {
+import {
+	boroughCoordinates,
+	neighbourhoodsData,
+} from "../../data/neighbourhoodData";
+
+function SearchBar({ setPropertyData, setCrimeData }) {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [loading, setLoading] = useState(false);
+	const [rateColor, setRateColor] = useState("");
+	const [crimeRate, setCrimeRate] = useState("");
+
+	const findBoroughForNeighbourhood = (input) => {
+		for (const neighbourhood in neighbourhoodsData) {
+			if (neighbourhoodsData[neighbourhood].includes(input.toLowerCase())) {
+				return neighbourhood;
+			}
+		}
+		return null;
+	};
+
+	const getCrimeData = async (borough) => {
+		if (boroughCoordinates.hasOwnProperty(borough)) {
+			const { latitude, longitude } = boroughCoordinates[borough];
+			const date = "2023-12";
+			const crimeUrl = `https://data.police.uk/api/crimes-street/all-crime?lat=${latitude}&lng=${longitude}&date=${date}`;
+			
+
+
+			try {
+				const response = await fetch(crimeUrl);
+				if (!response.ok) {
+					throw new Error(`HTTP error! Status: ${response.status}`);
+				}
+				const data = await response.json();
+
+				const crimeCounts = {};
+				data.forEach((crime) => {
+					const category = crime.category.toLowerCase();
+					crimeCounts[category] = (crimeCounts[category] || 0) + 1;
+				});
+
+				console.clear();
+				for (const category in crimeCounts) {
+					console.log(`${category}: ${crimeCounts[category]}`);
+				}
+
+				const totalCrimes = Object.values(crimeCounts).reduce(
+					(sum, current) => sum + current,
+					0
+				);
+
+				let rate, color;
+				if (totalCrimes <= 75) {
+					rate = "Low";
+					color = "success";
+				} else if (totalCrimes > 75 && totalCrimes <= 147) {
+					rate = "Moderate";
+					color = "warning";
+				} else if (totalCrimes > 147 && totalCrimes <= 302) {
+					rate = "Medium";
+					color = "secondary";
+				} else {
+					rate = "High";
+					color = "danger";
+				}
+
+				setCrimeRate(rate);
+				setRateColor(color);
+
+				// here we call for setCrimeData
+				// how do we save both pieces of data input our setCrimeData update method(?)
+				const CrimeResponse = await fetch(crimeUrl);
+				const CrimeResult = await CrimeResponse.json();
+				console.log(CrimeResult)
+	
+				setCrimeData(CrimeResult);
+				// setCrimeRate(rate);
+				// setRateColor(color);
+			} catch (error) {
+				console.error("Failed to fetch data:", error);
+			}
+		} else {
+			alert("Borough not found. Please enter a valid borough name.");
+		}
+	};
 
 	const handleInputChange = (e) => {
 		setSearchTerm(e.target.value);
@@ -391,6 +473,19 @@ function SearchBar({ setPropertyData }) {
 	const handleSearch = async (e) => {
 		e.preventDefault();
 		setLoading(true);
+		
+	
+		if (boroughCoordinates.hasOwnProperty(searchTerm)) {
+			getCrimeData(searchTerm);
+		} else {
+			const borough = findBoroughForNeighbourhood(searchTerm);
+			if (borough) {
+				getCrimeData(borough);
+			} else {
+				alert("Please enter a valid borough or neighbourhood name.");
+			}
+		}
+		// setInput("");
 
 		try {
 			const autoCompleteUrl = `https://uk-real-estate-rightmove.p.rapidapi.com/auto-complete?location=${searchTerm}`;
@@ -398,7 +493,7 @@ function SearchBar({ setPropertyData }) {
 				method: "GET",
 				headers: {
 					"X-RapidAPI-Key":
-						"72af507e69msh04ba0c14cca9fe0p1556b3jsn418cd33a3d80",
+					"72af507e69msh04ba0c14cca9fe0p1556b3jsn418cd33a3d80",
 					"X-RapidAPI-Host": "uk-real-estate-rightmove.p.rapidapi.com",
 				},
 			};
@@ -425,6 +520,9 @@ function SearchBar({ setPropertyData }) {
 			const propertyResult = await propertyResponse.json();
 
 			setPropertyData(propertyResult);
+
+			// Think about putting the CRIME API REQUEST CODE  in THIS FUNCTION HERE
+
 		} catch (error) {
 			console.error(error);
 		} finally {

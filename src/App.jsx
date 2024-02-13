@@ -86,7 +86,8 @@ import Footer from './components/Footer';
 
 function App() {
 	const [propertyData, setPropertyData] = useState(null);
-
+    const [crimeData, setCrimeData] = useState(null);
+    
 	return (
 		<div>
 			<header id="header">
@@ -94,11 +95,11 @@ function App() {
 			</header>
 			<ContactForm />
 			<h1>Property Listings</h1>
-			<SearchBar setPropertyData={setPropertyData} />
+			<SearchBar setPropertyData={setPropertyData} setCrimeData={setCrimeData}/>
 			<PropertyCard propertyData={propertyData} />
             <About />
 
-			<Crime />
+				{crimeData ? <Crime crimeData={crimeData}/>: null}
             <footer>
       <Footer />
     </footer>
