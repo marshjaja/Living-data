@@ -1,20 +1,18 @@
 .main-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px; /* Add margin bottom to create a gap */
-    background-color: #c0c0c0; /* Set slightly darker light gray color */
-    width: 800px; /* Set width */
-    height: 400px; /* Set height */
-    padding: 20px; /* Add padding for spacing inside the main container */
-    color: #333; /* Set darker text color */
+    flex-direction: column;
+    justify-content: center; 
+    margin: 20px auto; 
+    background-color: #c0c0c0;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    color: #333;
 }
 
 .property-card-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
+    flex-direction: row; 
 }
 
 .image-container {
@@ -25,8 +23,49 @@
     flex: 1;
 }
 
-/* Set smaller font size for text */
 .property-card-container p {
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 16px;
     color: rgb(119, 5, 58);
+}
+
+
+@media screen and (max-width: 600px) {
+    .main-container {
+        width: 100%;
+    }
+
+    .property-card-container {
+        flex-direction: column; 
+    }
+
+    .image-container {
+        margin-right: 0;
+    }
+
+    .card-container {
+        width: 100%;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    .property-card-container {
+        flex-direction: row-reverse; 
+    }
+
+    .image-container {
+        margin-right: 0;
+        margin-left: 20px; 
+        order: 2; 
+    }
+
+    .card-container {
+        flex: 1;
+        order: 1; 
+    }
 }
