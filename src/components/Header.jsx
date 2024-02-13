@@ -1,10 +1,12 @@
 import headerImg from '../assets/images/headerPhoto.jpg';
 
 import './Header.css';
+import NavBar from './NavBar';
 
 const Header = () => {
   return (
     <div>
+      <NavBar />;
       <div className="container hero-image">
         <div className="row">
           <div className="col-lg-6 mb-3 d-flex justify-content-center mt-4">
