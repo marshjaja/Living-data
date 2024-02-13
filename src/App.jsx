@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
 import PropertyCard from './components/PropertyCard/PropertyCard';
 import ContactForm from './components/ContactForm';
@@ -15,6 +16,7 @@ function App() {
       <header id="header">
         <Header />
       </header>
+
       <ContactForm />
       <h1>Property Listings</h1>
       <SearchBar setPropertyData={setPropertyData} />
