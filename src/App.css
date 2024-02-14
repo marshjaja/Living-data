@@ -75,3 +75,19 @@ button:hover {
 .read-the-docs {
 	color: #888;
 }
+.scrollable-menu {
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.dropdown {
+	color: #662549;
+
+	border: #f39f5a;
+}
+
+.custom-dropdown-toggle,
+.custom-search-button {
+	background-color: #662549 !important;
+	border-color: #662549 !important;
+}
