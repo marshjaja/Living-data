@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import PropertyCard from "./components/PropertyCard/PropertyCard";
 import ContactForm from "./components/ContactForm";
-import Crime from "./components/Crime";
+import Crime from "../src/components/Crime/Crime";
 
 function App() {
 	const [propertyData, setPropertyData] = useState(null);
