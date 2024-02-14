@@ -1,7 +1,7 @@
 
 import headerImg from '../assets/images/headerPhoto.jpg';
 import SearchBar from './SearchBar';
-import "../App.css";
+import "./Header.css";
 
 const Header = () => {
     return (
@@ -53,3 +53,4 @@ const Header = () => {
 }
 
 export default Header     
+

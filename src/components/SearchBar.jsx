@@ -40,9 +40,8 @@ function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
 			const propertyOptions = {
 				method: "GET",
 				headers: {
-					"X-RapidAPI-Key":
-						"8141a479b1msh7e4360c5cde8d0dp1d7b7fjsndeddaa2930bb",
-					"X-RapidAPI-Host": "uk-real-estate-rightmove.p.rapidapi.com",
+					'X-RapidAPI-Key': '8141a479b1msh7e4360c5cde8d0dp1d7b7fjsndeddaa2930bb',
+					'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com'
 				},
 			};
 
