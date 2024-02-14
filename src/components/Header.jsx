@@ -1,6 +1,7 @@
 
+import headerImg from '../assets/images/headerPhoto.jpg';
 import SearchBar from './SearchBar';
-import "../App.css";
+import "./Header.css";
 
 const Header = () => {
     return (
@@ -44,7 +45,7 @@ const Header = () => {
 				</div>
 			</div>
 			<div className="container-fluid custom-bg search-bar">
-        <SearchBar />
+        {/* <SearchBar /> */}
         </div>
 
       </div>

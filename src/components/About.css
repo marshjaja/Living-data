@@ -1,0 +1,31 @@
+.about-block .image {
+    padding-bottom: 20px;
+  }
+  /* .about-image {
+    max-width: 200px;
+    max-height: 200px;
+  
+  } */
+  .title-holder {
+    margin: 0 0 20px;
+    text-align: center;
+    margin: 0 0 40px;
+  }
+  .title-holder h2 {
+    margin: 0 0 5px;
+  }
+  
+  .title-holder .subtitle {
+    color: #999999;
+  }
+  
+  .title-holder .subtitle:before {
+    content: '-';
+    margin: 0 5px 0 0;
+  }
+  
+  .title-holder .subtitle:after {
+    content: '-';
+    margin: 0 0 0 5px;
+  }
+  
