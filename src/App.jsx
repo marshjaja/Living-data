@@ -6,8 +6,7 @@ import Crime from "../src/components/Crime/Crime";
 import Header from "./components/Header";
 import About from "./components/About";
 import Crime from "./components/Crime";
-import Footer from './components/Footer';
-
+import Footer from "./components/Footer";
 
 function App() {
 	const [propertyData, setPropertyData] = useState(null);
@@ -25,12 +24,8 @@ function App() {
 			/>
 			<Crime crimeRate={crimeRate} crimeData={crimeData} />
 			<PropertyCard propertyData={propertyData} />
-            <About />
-
-			<Crime />
-            <footer>
-      <Footer />
-    <footer/>
+			<About />
+			<Footer />
 		</div>
 	);
 }
