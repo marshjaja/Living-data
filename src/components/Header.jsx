@@ -45,7 +45,7 @@ const Header = () => {
 				</div>
 			</div>
 			<div className="container-fluid custom-bg search-bar">
-        <SearchBar />
+        {/* <SearchBar /> */}
         </div>
 
       </div>

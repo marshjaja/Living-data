@@ -25,6 +25,7 @@ function App() {
 			<Crime crimeRate={crimeRate} crimeData={crimeData} />
 			<PropertyCard propertyData={propertyData} />
 			<About />
+			<Crime />
 			<Footer />
 		</div>
 	);

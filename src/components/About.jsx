@@ -11,13 +11,13 @@ function About() {
                 <h2 style={{color:"#F39F5A", fontFamily:"Quicksand",
   fontWeight:"400"}}>About Us</h2>
                 <div style={{color:"#F39F5A", fontFamily:"Source Sans 3",
-  fontWeight:"200"}} className='subtitle'>Learn More about us</div>
+  fontWeight:"200", marginBottom:"1em"}} className='subtitle'>Learn More about us</div>
             </div>
         <Row>
           <Col sm={6} className='about-image'>
           <Image src={aboutImg} width={300} height={250} />
           </Col>
-          <Col sm={6}>
+          <Col sm={6} style={{alignSelf:'center'}}>
           <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil illum accusantium temporibus inventore velit iste, repudiandae quibusdam quis officiis commodi eaque? Enim quasi deserunt unde natus, consequatur velit voluptatibus quae?</p>
           </Col>
         </Row>
