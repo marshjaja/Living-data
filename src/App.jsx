@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Header from "./components/Header";
+import ContactForm from "./components/ContactForm";
 import SearchBar from "./components/SearchBar";
 import PropertyCard from "./components/PropertyCard/PropertyCard";
 import ContactForm from "./components/ContactForm";
