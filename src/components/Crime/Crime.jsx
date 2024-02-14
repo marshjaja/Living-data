@@ -62,7 +62,8 @@ function Crime({ crimeRate, crimeData, searchTerm }) {
 			{crimeRate && <h1>Crime Information</h1>}
 			{crimeRate && crimeSeverity && (
 				<Alert variant={crimeSeverity.color}>
-					Crime Score: {crimeSeverity.severity} Crime Rate: {crimeRate}
+					Crime Score: {crimeSeverity.severity}
+					<br /> Crime Rate: {crimeRate}
 				</Alert>
 			)}
 			{crimeRate && (
