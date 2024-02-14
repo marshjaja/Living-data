@@ -75,6 +75,7 @@ function Crime({ crimeRate, crimeData, searchTerm }) {
 						}}
 						aria-controls="collapse-text"
 						aria-expanded={open}
+						className="custom-search-button"
 					>
 						{open ? "Hide Crime Data" : "More Crime Data"}
 					</Button>
