@@ -397,9 +397,8 @@ function SearchBar({ setPropertyData }) {
 			const autoCompleteOptions = {
 				method: "GET",
 				headers: {
-					"X-RapidAPI-Key":
-						"72af507e69msh04ba0c14cca9fe0p1556b3jsn418cd33a3d80",
-					"X-RapidAPI-Host": "uk-real-estate-rightmove.p.rapidapi.com",
+					'X-RapidAPI-Key': '8141a479b1msh7e4360c5cde8d0dp1d7b7fjsndeddaa2930bb',
+					'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com'
 				},
 			};
 
@@ -415,9 +414,8 @@ function SearchBar({ setPropertyData }) {
 			const propertyOptions = {
 				method: "GET",
 				headers: {
-					"X-RapidAPI-Key":
-						"72af507e69msh04ba0c14cca9fe0p1556b3jsn418cd33a3d80",
-					"X-RapidAPI-Host": "uk-real-estate-rightmove.p.rapidapi.com",
+					'X-RapidAPI-Key': '8141a479b1msh7e4360c5cde8d0dp1d7b7fjsndeddaa2930bb',
+					'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com'
 				},
 			};
 
