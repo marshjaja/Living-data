@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import PropertyCard from "./PropertyCard/PropertyCard";
 import { boroughCoordinates } from "../../data/neighbourhoodData";
 
-function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
+function SearchBar({ setPropertyData, setCrimeData }) {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [loading, setLoading] = useState(false);
 	const [rateColor, setRateColor] = useState("");
@@ -25,8 +25,6 @@ function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
 			const { latitude, longitude } = boroughCoordinates[borough];
 			const date = "2023-12";
 			const crimeUrl = `https://data.police.uk/api/crimes-street/all-crime?lat=${latitude}&lng=${longitude}&date=${date}`;
-			
-
 
 			try {
 				const response = await fetch(crimeUrl);
@@ -73,8 +71,8 @@ function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
 				// how do we save both pieces of data input our setCrimeData update method(?)
 				const CrimeResponse = await fetch(crimeUrl);
 				const CrimeResult = await CrimeResponse.json();
-				console.log(CrimeResult)
-	
+				console.log(CrimeResult);
+
 				setCrimeData(CrimeResult);
 				// setCrimeRate(rate);
 				// setRateColor(color);
@@ -93,8 +91,7 @@ function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
 	const handleSearch = async (e) => {
 		e.preventDefault();
 		setLoading(true);
-		
-	
+
 		if (boroughCoordinates.hasOwnProperty(searchTerm)) {
 			getCrimeData(searchTerm);
 		} else {
@@ -130,8 +127,9 @@ function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
 			const propertyOptions = {
 				method: "GET",
 				headers: {
-					'X-RapidAPI-Key': '8141a479b1msh7e4360c5cde8d0dp1d7b7fjsndeddaa2930bb',
-					'X-RapidAPI-Host': 'uk-real-estate-rightmove.p.rapidapi.com'
+					"X-RapidAPI-Key":
+						"8141a479b1msh7e4360c5cde8d0dp1d7b7fjsndeddaa2930bb",
+					"X-RapidAPI-Host": "uk-real-estate-rightmove.p.rapidapi.com",
 				},
 			};
 
@@ -170,7 +168,6 @@ function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
 			setPropertyData(propertyResult);
 
 			// Think about putting the CRIME API REQUEST CODE  in THIS FUNCTION HERE
-
 		} catch (error) {
 			console.error(error);
 			Swal.fire({

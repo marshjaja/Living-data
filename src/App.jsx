@@ -5,7 +5,6 @@ import ContactForm from "./components/ContactForm";
 import Crime from "../src/components/Crime/Crime";
 import Header from "./components/Header";
 import About from "./components/About";
-import Crime from "./components/Crime";
 import Footer from "./components/Footer";
 
 function App() {
