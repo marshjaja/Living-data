@@ -1,0 +1,19 @@
+.search-button {
+    background-color: #F39F5A !important;
+    border-color: #F39F5A !important;
+    color: white !important;
+    margin-top: 20px;
+}
+.search-button:hover {
+    background-color: #F39F5A;
+    border-color: #F39F5A;
+    color: white;
+}
+.search-bar {
+    width: 500px !important;
+}
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -35,10 +35,10 @@ const Header = () => {
 								</article>
 								<a
 									href="#about"
-									className="btn-header mt-3"
+									className="btn-header mt-3 learn-more"
 								>
 									Learn More
-									<i className="fas fa-chevron-right"></i></a>
+									<i className="fas fa-chevron-right" ></i></a>
 							</div>
 						</div>
 					</div>
