@@ -1,0 +1,21 @@
+.my-popup {
+	background-color: #efefef;
+	border-radius: 5%;
+	border: 2px solid #451952;
+}
+
+.my-title {
+	color: #333;
+}
+
+.my-confirm-button {
+	background-color: #451952;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+}
+
+.my-confirm-button:hover {
+	background-color: #4e225b;
+}

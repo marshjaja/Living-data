@@ -37,8 +37,11 @@ export const boroughCoordinates = {
 	Sutton: { latitude: 51.362, longitude: -0.175 },
 	Walthamstow: { latitude: 51.593, longitude: -0.0112 },
 	Wandsworth: { latitude: 51.454, longitude: -0.189 },
-	Westminster: { latitude: 51.514, longitude: -0.157 },
-	Westminster: { latitude: 51.514, longitude: -0.157 },
+	Westminster: {
+		latitude: 51.514,
+		longitude: -0.157,
+		area: "Central",
+	},
 };
 
 export const neighbourhoodsData = {
