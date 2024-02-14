@@ -1,4 +1,4 @@
-import headerImg from '../assets/images/headerPhoto.jpg';
+import headerImg from '../assets/images/LivingDataLogo.jpg';
 
 import './Header.css';
 import NavBar from './NavBar';
@@ -18,7 +18,7 @@ const Header = () => {
                 <h3
                   style={{
                     color: '#662549',
-                    fontFamily: 'Quicksand',
+                    fontFamily: 'Quicksand', // To change text
                     fontWeight: '400',
                   }}
                   className=" mb-4"

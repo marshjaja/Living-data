@@ -44,6 +44,7 @@
 //----------------------------------^ original
 import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
+import "./Footer.css"
 
 function Footer() {
     const [showTopBtn, setShowTopBtn] = useState(false);
@@ -66,7 +67,7 @@ function Footer() {
     }
 
     return (
-        <Container>
+        <Container className="footer">
             <div className='copyright' style={{ color: "#F39F5A", fontFamily: "Source Sans 3" }}>&copy; 2024. All Rights Reserved.</div>
             <div className='socials'>
                 <ul>

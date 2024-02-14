@@ -16,7 +16,7 @@ function Home() {
         <Header />
       </header>
 
-      <h1>Property Listings</h1>
+      <h1 id= "property-listing">Property Listings</h1>
       <SearchBar setPropertyData={setPropertyData} />
       <PropertyCard propertyData={propertyData} />
       <About />

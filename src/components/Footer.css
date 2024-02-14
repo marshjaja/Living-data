@@ -41,6 +41,7 @@
   }
   
   .socials ul {
+    list-style-type: none;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -88,5 +89,7 @@
   #footer .socials a:hover {
     background:#fff;
   }
-
+.footer{
+  flex-direction: column;
+}
    
