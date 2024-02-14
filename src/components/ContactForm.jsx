@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
-
+import './ContactForm.css';
+import emailjs from '@emailjs/browser';
 // Contact Form Logic
 function ContactForm() {
   // create state variable that holds the form data
@@ -11,11 +11,9 @@ function ContactForm() {
     subject: '',
     message: '',
   });
-
   // create state varibale for form errors
   const [formErrors, setFormErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
-
   //  Update for data as user types
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -28,7 +26,6 @@ function ContactForm() {
       [name]: '',
     });
   };
-
   //    Validation form to check that all input fields have been completed by user
   const validateForm = () => {
     const errors = {};
@@ -46,16 +43,30 @@ function ContactForm() {
     if (!formData.message.trim()) {
       errors.message = 'Message is required';
     }
-
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
       setSubmitting(true);
-      console.log(formData);
+      // Creating EmailJ serviceID, templateID and Public Key
+      const serviceId = 'service_gj1vtaf';
+      const templateId = 'contact_form';
+      const publicKey = '8git3JVuOnc7ohSsY';
+      // Creating a new object that conatins dynamic template params
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        to_name: 'Living Data',
+        subject: formData.subject,
+        message: formData.message,
+      };
+      emailjs
+        .send(serviceId, templateId, templateParams, publicKey)
+        .then((response) => {
+          console.log('Email sent successfully!', response);
+        });
       setFormData({
         name: '',
         email: '',
@@ -66,7 +77,6 @@ function ContactForm() {
       setSubmitting(false);
     }
   };
-
   return (
     <div className="container">
       <form className="contactForm" onSubmit={handleSubmit}>
@@ -123,5 +133,4 @@ function ContactForm() {
     </div>
   );
 }
-
 export default ContactForm;

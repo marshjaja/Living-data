@@ -1,0 +1,34 @@
+body {
+    background-color: #451952;
+  }
+  form {
+    padding: 50px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    background-color: #451952;
+  }
+  input {
+    display: flex;
+    border-radius: 5px;
+    padding-top: 5px;
+    border: 2px solid #AE445A;
+  }
+  textarea {
+    display: flex;
+    margin-left: 8px;
+    border-radius: 5px;
+    border: 2px solid #AE445A;
+    margin-bottom: 10px;
+  }
+  label {
+    font-weight: bold;
+    color: #F39F5A;
+    margin-top: 5px;
+  }
+  button:hover {
+    color: #F39F5A;
+    background-color: #662549;
+    border: #F39F5A;
+  }
