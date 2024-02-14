@@ -97,15 +97,16 @@ function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
 	};
 
 	return (
-		<div>
+		<div className="search-bar-container"   >
 			<Form onSubmit={handleSearch}>
 				<Form.Control
 					type="text"
 					placeholder="Search by Region name"
 					value={searchTerm}
 					onChange={handleInputChange}
+					className="search-bar"
 				/>
-				<Button type="submit" disabled={loading}>
+				<Button type="submit" disabled={loading}  className="search-button" >
 					{loading ? "Searching..." : "Search"}
 				</Button>
 			</Form>

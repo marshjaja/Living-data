@@ -84,7 +84,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Source Sans 3", sans-serif; /*To change font*/
   font-weight: 400;
   margin: 0 0 20px;
   color:#F39F5A;
@@ -131,5 +131,9 @@ p {
   color: #F39F5A;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 200;
+}
+
+#property-listing{
+  padding-top: 30px;
 }
 
