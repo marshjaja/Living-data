@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import PropertyCard from "./PropertyCard/PropertyCard"; // Importing PropertyCard component
+import "../components/SearchBar.css"; 
+
 
 function SearchBar({ setPropertyData }) {
 	const [searchTerm, setSearchTerm] = useState("");
@@ -57,15 +59,16 @@ function SearchBar({ setPropertyData }) {
 	};
 
 	return (
-		<div>
+		<div className="search-bar-container"   >
 			<Form onSubmit={handleSearch}>
 				<Form.Control
 					type="text"
 					placeholder="Search by Region name"
 					value={searchTerm}
 					onChange={handleInputChange}
+					className="search-bar"
 				/>
-				<Button type="submit" disabled={loading}>
+				<Button type="submit" disabled={loading}  className="search-button" >
 					{loading ? "Searching..." : "Search"}
 				</Button>
 			</Form>
