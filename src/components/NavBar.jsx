@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-// import Logo from '../assets/images/logo.png';
+import Logo from '../assets/images/LivingDataLogo.jpg';
 import { Link } from 'react-router-dom';
 
 function NavBar() {
@@ -12,6 +12,11 @@ function NavBar() {
         <Container>
           
           <Navbar.Brand as={Link} to="/" id="livingdata">
+            <img src={Logo}
+            height="70"
+            className='d-inline-block align-top'
+            alt="Living Data Logo"
+            />
           
           </Navbar.Brand>
           <Nav className="me-auto">

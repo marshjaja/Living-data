@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
 import PropertyCard from "./PropertyCard/PropertyCard";
 import { boroughCoordinates } from "../../data/neighbourhoodData";
+import "./SearchBar.css"
 
 function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
 	const [searchTerm, setSearchTerm] = useState("");
@@ -98,7 +99,7 @@ function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
 	};
 
 	return (
-		<div>
+		<div className="search-bar-container"  >
 			<Form onSubmit={handleSearch}>
 				<Form.Control
 					type="text"
@@ -106,7 +107,7 @@ function SearchBar({ setPropertyData, setCrimeData, setCrimeRate }) {
 					value={searchTerm}
 					onChange={handleInputChange}
 				/>
-				<Button type="submit" disabled={loading}>
+				<Button type="submit" className="search-button">
 					{loading ? "Searching..." : "Search"}
 				</Button>
 			</Form>

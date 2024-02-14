@@ -16,7 +16,7 @@ function Crime({ crimeRate, crimeData, searchTerm }) {
 
 	const calculateSeverity = (crimeRate) => {
 		if (!crimeRate) {
-			console.warn("Crime rate is missing.");
+			// console.warn("Crime rate is missing.");
 			return null;
 		}
 
