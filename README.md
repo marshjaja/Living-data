@@ -41,7 +41,7 @@ Welcome to Living Data! Our platform is meticulously crafted to assist users in 
 
 ## Getting Started
 
-To run the application locally, follow these steps:
+To run the application locally, please follow these steps:
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
