@@ -1,5 +1,6 @@
 # Living Data
 The URL of the deployed application: https://main--living-data.netlify.app/
+The URL of the GitHub repository: https://github.com/marshjaja/Living-data/
 
 ## Contents
 
