@@ -8,7 +8,7 @@ https://github.com/marshjaja/Living-data/
 [Link to presentation
 ](https://www.canva.com/design/DAF8rYu6wmc/Ip-USMqNtQq1FIxsQ9050w/edit?utm_content=DAF8rYu6wmc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-## Contents
+## Contents 
 
 - [Introduction](#introduction)
 - [Features](#features)
