@@ -64,7 +64,7 @@ Please ensure your code adheres to our coding standards and includes relevant do
 ## Contributors
 
 - Marcia Mijnhijmer
-- Cara Joseph
+- Cara Joseph 
 - Marina Iacomino
 - Robyn Windsor
 - Vasile Lacatusu
