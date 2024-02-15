@@ -1,4 +1,5 @@
 # Living Data
+The URL of the deployed application: https://main--living-data.netlify.app/
 
 ## Contents
 
