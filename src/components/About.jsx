@@ -18,7 +18,7 @@ function About() {
           <Image src={aboutImg} width={300} height={250} />
           </Col>
           <Col sm={6} style={{alignSelf:'center'}}>
-          <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil illum accusantium temporibus inventore velit iste, repudiandae quibusdam quis officiis commodi eaque? Enim quasi deserunt unde natus, consequatur velit voluptatibus quae?</p>
+          <p> Introducing Living Data, a revolutionary platform created to redefine the way people discover rental properties in their preferred locations; seamlessly integrating comprehensive local crime rate information.</p>
           </Col>
         </Row>
       </Container>
