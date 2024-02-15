@@ -17,6 +17,8 @@ The URL of the GitHub repository: https://github.com/marshjaja/Living-data/
 
 Welcome to Living Data! Our platform is meticulously crafted to assist users in discovering rental properties within their preferred locale, all while delivering valuable insights into local crime rates. Developed with the power of React, this application boasts a user-friendly interface, ensuring a seamless journey through property exploration and facilitating well-informed decision-making.
 
+<img width="1440" alt="Living Data pic" src="https://github.com/marshjaja/Living-data/assets/79760037/22be549b-e8bd-4228-a661-ec0ae8cb25b2">
+
 ## Features
 
 - **Property Search:** Display of available rental properties by entering their desired location.
