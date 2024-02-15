@@ -73,7 +73,7 @@ Please ensure your code adheres to our coding standards and includes relevant do
 
 The project is licensed under the [MIT License](https://opensource.org/license/mit/).
 
-## React + Vite
+## React + Vite 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
