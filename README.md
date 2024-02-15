@@ -60,7 +60,7 @@ Please ensure your code adheres to our coding standards and includes relevant do
 
 - Marcia Mijnhijmer
 - Cara Joseph
-- Marina Iacomino,
+- Marina Iacomino
 - Robyn Windsor
 - Vasile Lacatusu
 
